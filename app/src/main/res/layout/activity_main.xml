@@ -11,61 +11,70 @@
         android:layout_width="wrap_content"
         android:layout_height="441dp"
         android:layout_gravity="center"
+        android:layout_weight="1"
         app:columnCount="3">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/1"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:onClick="buttonClicked"
+            android:onClick="tileClicked"
             android:text="Button" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/2"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:onClick="tileClicked"
             android:text="Button" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/3"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:onClick="tileClicked"
             android:text="Button" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/4"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:onClick="tileClicked"
             android:text="Button" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/5"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:onClick="tileClicked"
             android:text="Button" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/6"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:onClick="tileClicked"
             android:text="Button" />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/7"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:onClick="tileClicked"
             android:text="Button" />
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/8"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:onClick="tileClicked"
             android:text="Button" />
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/9"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:onClick="tileClicked"
             android:text="Button" />
     </android.support.v7.widget.GridLayout>
 
@@ -74,6 +83,7 @@
         android:layout_width="152dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:onClick="resetClicked"
         android:text="Button" />
 
 </LinearLayout>
