@@ -18,64 +18,55 @@
             android:id="@+id/1"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:onClick="tileClicked"
-            android:text="Button" />
+            android:onClick="tileClicked" />
 
         <Button
             android:id="@+id/2"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:onClick="tileClicked"
-            android:text="Button" />
+            android:onClick="tileClicked" />
 
         <Button
             android:id="@+id/3"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:onClick="tileClicked"
-            android:text="Button" />
+            android:onClick="tileClicked" />
 
         <Button
             android:id="@+id/4"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:onClick="tileClicked"
-            android:text="Button" />
+            android:onClick="tileClicked" />
 
         <Button
             android:id="@+id/5"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:onClick="tileClicked"
-            android:text="Button" />
+            android:onClick="tileClicked" />
 
         <Button
             android:id="@+id/6"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:onClick="tileClicked"
-            android:text="Button" />
+            android:onClick="tileClicked" />
 
         <Button
             android:id="@+id/7"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:onClick="tileClicked"
-            android:text="Button" />
+            android:onClick="tileClicked" />
 
         <Button
             android:id="@+id/8"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:onClick="tileClicked"
-            android:text="Button" />
+            android:onClick="tileClicked" />
 
         <Button
             android:id="@+id/9"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:onClick="tileClicked"
-            android:text="Button" />
+            android:onClick="tileClicked" />
     </android.support.v7.widget.GridLayout>
 
     <Button

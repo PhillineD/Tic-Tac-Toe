@@ -4,6 +4,7 @@ package com.example.phill.myapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
 //    public void buttonClicked(View view) {
 //    }
+
 //a method that will process tile clicks
     public void tileClicked(View view) {
 
@@ -67,18 +69,46 @@ public class MainActivity extends AppCompatActivity {
         // moet deze coördinaten aan de spelkeuzemethode toevoegen
         TileState state = game.choose(row, column);
 
+        // String to fill in the button
+        String button = "";
+
         // Depending on the outcome of the choose method, it has to update the selected button. Here’s a starter:
         switch(state) {
             case CROSS:
                 // Make the button a cross
+                button = "X";
                 break;
             case CIRCLE:
+
                 // Make the button a circle
+                button = "O";
                 break;
             case INVALID:
+
                 // There is already something in the checkbox
+                button = "";
                 break;
         }
+
+        GameState finish = game.won();
+
+        switch (finish){
+            case IN_PROGRESS:
+                break;
+            case PLAYER_ONE:
+                break;
+            case PLAYER_TWO:
+                break;
+            case DRAW:
+                break;
+            case WIN:
+                break;
+        }
+
+
+
+        TextView b = (TextView) view;
+        b.setText(button);
 
     }
     public void resetClicked(View view) {
