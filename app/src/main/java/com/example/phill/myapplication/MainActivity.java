@@ -1,3 +1,7 @@
+// Philline Dikker
+// 1236078
+// Tic-Tac-Toe
+
 package com.example.phill.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +15,8 @@ public class MainActivity extends AppCompatActivity {
     int row;
     int column;
     final private int BOARD_SIZE = 3;
-    private TileState[][] board;
+//    private TileState[][] board;
+    public TileState[][] board;
 
     Button a1, a2, a3 , b1, b2, b3, c1, c2, c3;
     TextView Win_Text;
@@ -32,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         c1 = (Button) findViewById(R.id.Button7);
         c2 = (Button) findViewById(R.id.Button8);
         c3 = (Button) findViewById(R.id.Button9);
+        Win_Text = findViewById(R.id.textView);
 
     }
 
@@ -65,37 +71,143 @@ public class MainActivity extends AppCompatActivity {
         String c3Text = (String)   c3.getText();
         outState.putString("C3Text", c3Text);
 
+        String Win = (String)  Win_Text.getText();
+        outState.putString("win",Win);
+
     }
     @Override
     public void onRestoreInstanceState(Bundle inState) {
         super.onRestoreInstanceState(inState);
 
+        // Button1
         String loadButton1Text = inState.getString("A1Text");
+
+        // add text to the button
         a1.setText(loadButton1Text);
 
+        // update game.board
+        if (loadButton1Text == "X")
+            game.board[0][0] = TileState.CROSS;
+        else if (loadButton1Text == "0")
+            game.board[0][0] = TileState.CIRCLE;
+        else
+            game.board[0][0] = TileState.BLANK;
+
+        // Button2
         String loadButton2Text = inState.getString("A2Text");
+
+        // add text to the button
         a2.setText(loadButton2Text);
 
+        // update game.board
+        if (loadButton2Text == "X")
+            game.board[0][1] = TileState.CROSS;
+        else if (loadButton2Text == "0")
+            game.board[0][1] = TileState.CIRCLE;
+        else
+            game.board[0][1] = TileState.BLANK;
+
+        // Button3
         String loadButton3Text = inState.getString("A3Text");
+
+        // add text to the button
         a3.setText(loadButton3Text);
 
+        // update game.board
+        if (loadButton3Text == "X")
+            game.board[0][2] = TileState.CROSS;
+        else if (loadButton3Text == "0")
+            game.board[0][2] = TileState.CIRCLE;
+        else
+            game.board[0][2] = TileState.BLANK;
+
+        // Button 4
         String loadButton4Text = inState.getString("B1Text");
+
+        // add text to the button
         b1.setText(loadButton4Text);
 
+        // update game.board
+        if (loadButton4Text == "X")
+            game.board[1][0] = TileState.CROSS;
+        else if (loadButton4Text == "0")
+            game.board[1][0] = TileState.CIRCLE;
+        else
+            game.board[1][0] = TileState.BLANK;
+
+        // Button5
         String loadButton5Text = inState.getString("B2Text");
+
+        // add text to the button
         b2.setText(loadButton5Text);
 
+        // update game.board
+        if (loadButton5Text == "X")
+            game.board[1][1] = TileState.CROSS;
+        else if (loadButton5Text == "0")
+            game.board[1][1] = TileState.CIRCLE;
+        else
+            game.board[1][1] = TileState.BLANK;
+
+        // Button6
         String loadButton6Text = inState.getString("B3Text");
+
+        // add text to the button
         b3.setText(loadButton6Text);
 
+        // update game.board
+        if (loadButton6Text == "X")
+            game.board[1][2] = TileState.CROSS;
+        else if (loadButton6Text == "0")
+            game.board[1][2] = TileState.CIRCLE;
+        else
+            game.board[1][2] = TileState.BLANK;
+
+        // Button7
         String loadButton7Text = inState.getString("C1Text");
+
+        // add text to the button
         c1.setText(loadButton7Text);
 
+        // update game.board
+        if (loadButton7Text == "X")
+            game.board[2][0] = TileState.CROSS;
+        else if (loadButton7Text == "0")
+            game.board[2][0] = TileState.CIRCLE;
+        else
+            game.board[2][0] = TileState.BLANK;
+
+        // Button8
         String loadButton8Text = inState.getString("C2Text");
+
+        // add text to the button
         c2.setText(loadButton8Text);
 
+        // update game.board
+        if (loadButton8Text == "X")
+            game.board[2][1] = TileState.CROSS;
+        else if (loadButton8Text == "0")
+            game.board[2][1] = TileState.CIRCLE;
+        else
+            game.board[2][1] = TileState.BLANK;
+
+        // Button9
         String loadButton9Text = inState.getString("C3Text");
+
+        // add text to the button
         c3.setText(loadButton9Text);
+
+        // update game.board
+        if (loadButton9Text == "X")
+            game.board[2][2] = TileState.CROSS;
+        else if (loadButton9Text == "0")
+            game.board[2][2] = TileState.CIRCLE;
+        else
+            game.board[2][2] = TileState.BLANK;
+
+        String loadWin = inState.getString("win");
+        Win_Text.setText(loadWin);
+
 
     }
 //a method that will process tile clicks
@@ -152,7 +264,7 @@ public class MainActivity extends AppCompatActivity {
                 // String to fill in the button
                 String but = "";
 
-                // Depending on the outcome of the choose method, it has to update the selected button. Here’s a starter:
+                // Depending on the outcome of the choose method, it has to update the selected button
                 switch(state) {
                     case CROSS:
 
@@ -174,9 +286,6 @@ public class MainActivity extends AppCompatActivity {
                 b.setText(but);
 
             case DRAW:
-
-//                Win_Text = findViewById(R.id.textView);
-//                Win_Text.setText("Nobody won the game, click on RESET to start a new game");
                 break;
 
 //             When player one has won
@@ -184,6 +293,7 @@ public class MainActivity extends AppCompatActivity {
                 Win_Text = findViewById(R.id.textView);
                 Win_Text.setText("Player 1 you won!");
                 break;
+
 //            When player two has won
             case PLAYER_TWO:
                 Win_Text = findViewById(R.id.textView);
@@ -192,6 +302,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    // Reset make everything empthy
     public void resetClicked(View view) {
         Win_Text = findViewById(R.id.textView);
         Win_Text.setText("");
@@ -205,8 +317,6 @@ public class MainActivity extends AppCompatActivity {
         c2.setText("");
         c3.setText("");
         game = new Game();
-//        we can simply throw away the old game and create a new one
-//         update user interface
     }
 
 }

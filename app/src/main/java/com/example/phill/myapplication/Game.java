@@ -5,8 +5,8 @@ import android.service.quicksettings.Tile;
 public class Game {
 
     final private int BOARD_SIZE = 3;
-    private TileState[][] board;
-
+//    private TileState[][] board;
+    public TileState[][] board;
     private Boolean playerOneTurn;  // true if player 1's turn, false if player 2's turn
     private int movesPlayed;
     private Boolean gameOver;
