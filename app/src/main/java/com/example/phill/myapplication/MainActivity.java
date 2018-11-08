@@ -1,13 +1,10 @@
 package com.example.phill.myapplication;
 
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-
 
 public class MainActivity extends AppCompatActivity {
     Game game;
@@ -23,23 +20,86 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        game = new Game();
-        a1 = findViewById(R.id.Button1);
-        a2 = findViewById(R.id.Button2);
-        a3 = findViewById(R.id.Button3);
-        b1 = findViewById(R.id.Button4);
-        b2 = findViewById(R.id.Button5);
-        b3 = findViewById(R.id.Button6);
-        c1 = findViewById(R.id.Button7);
-        c2 = findViewById(R.id.Button8);
-        c3 = findViewById(R.id.Button9);
 
+        game = new Game();
+
+        a1 = (Button) findViewById(R.id.Button1);
+        a2 = (Button) findViewById(R.id.Button2);
+        a3 = (Button)findViewById(R.id.Button3);
+        b1 = (Button) findViewById(R.id.Button4);
+        b2 = (Button) findViewById(R.id.Button5);
+        b3 = (Button) findViewById(R.id.Button6);
+        c1 = (Button) findViewById(R.id.Button7);
+        c2 = (Button) findViewById(R.id.Button8);
+        c3 = (Button) findViewById(R.id.Button9);
 
     }
 
-//    public void buttonClicked(View view) {
-//    }
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        String a1Text = (String)   a1.getText();
+        outState.putString("A1Text", a1Text);
 
+        String a2Text = (String)   a2.getText();
+        outState.putString("A2Text", a2Text);
+
+        String a3Text = (String)   a3.getText();
+        outState.putString("A3Text", a3Text);
+
+        String b1Text = (String)   b1.getText();
+        outState.putString("B1Text", b1Text);
+
+        String b2Text = (String)   b2.getText();
+        outState.putString("B2Text", b2Text);
+
+        String b3Text = (String)   b3.getText();
+        outState.putString("B3Text", b3Text);
+
+        String c1Text = (String)   c1.getText();
+        outState.putString("C1Text", c1Text);
+
+        String c2Text = (String)   c2.getText();
+        outState.putString("C2Text", c2Text);
+
+        String c3Text = (String)   c3.getText();
+        outState.putString("C3Text", c3Text);
+
+
+
+    }
+    @Override
+    public void onRestoreInstanceState(Bundle inState) {
+        super.onRestoreInstanceState(inState);
+
+        String loadButton1Text = inState.getString("A1Text");
+        a1.setText(loadButton1Text);
+
+        String loadButton2Text = inState.getString("A2Text");
+        a2.setText(loadButton2Text);
+
+        String loadButton3Text = inState.getString("A3Text");
+        a3.setText(loadButton3Text);
+
+        String loadButton4Text = inState.getString("B1Text");
+        b1.setText(loadButton4Text);
+
+        String loadButton5Text = inState.getString("B2Text");
+        b2.setText(loadButton5Text);
+
+        String loadButton6Text = inState.getString("B3Text");
+        b3.setText(loadButton6Text);
+
+        String loadButton7Text = inState.getString("C1Text");
+        c1.setText(loadButton7Text);
+
+        String loadButton8Text = inState.getString("C2Text");
+        c2.setText(loadButton8Text);
+
+        String loadButton9Text = inState.getString("C3Text");
+        c3.setText(loadButton9Text);
+
+    }
 //a method that will process tile clicks
     public void tileClicked(View view) {
 
@@ -131,9 +191,7 @@ public class MainActivity extends AppCompatActivity {
                 Win_Text = findViewById(R.id.textView);
                 Win_Text.setText("Player two has won");
                 break;
-
         }
-
 
     }
     public void resetClicked(View view) {
