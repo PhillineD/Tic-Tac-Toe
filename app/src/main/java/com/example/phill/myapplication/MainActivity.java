@@ -65,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
         String c3Text = (String)   c3.getText();
         outState.putString("C3Text", c3Text);
 
-
-
     }
     @Override
     public void onRestoreInstanceState(Bundle inState) {
@@ -184,12 +182,12 @@ public class MainActivity extends AppCompatActivity {
 //             When player one has won
             case PLAYER_ONE:
                 Win_Text = findViewById(R.id.textView);
-                Win_Text.setText("Player one has won");
+                Win_Text.setText("Player 1 you won!");
                 break;
 //            When player two has won
             case PLAYER_TWO:
                 Win_Text = findViewById(R.id.textView);
-                Win_Text.setText("Player two has won");
+                Win_Text.setText("Player 2 you won!");
                 break;
         }
 
